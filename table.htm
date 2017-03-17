@@ -1,0 +1,67 @@
+<?php
+  include "config_adm.php";
+  include_once "cls_pool.php";
+  include_once "store_fun.php";
+print_r($_POST);
+?>
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Page Title</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="description" content="Description" />
+	
+	<script src="files/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript">
+		function sur_btn () {	
+	    document.main_store.action="table.htm";
+	    document.main_store.submit();
+		}
+		function edit (n) {
+		 $("#cy"+n).toggle(300);	
+		}
+	</script>
+	</head>
+<body>
+	<!--<header><nav>
+	</nav></header>-->
+	
+	<!--content start-->
+	<fieldset>
+		<legend><b>一月:</b></legend>
+		<table width=100%><tr>
+		<td align=center>收入:100</td> 
+		<td align=center>支出:500</td> 
+		<td align=center>總資產:600</td>
+		<td align=center><a href="Javascript:void(0)" style="text-decoration:none;" onclick="edit(0);" >op</a>
+		</td></tr>
+		</table>
+		<div id="cy0" style="display:none">123</div>
+	</fieldset>
+	<br>
+	<fieldset>
+		<legend><b>二月:</b></legend>
+		<table width=100%><tr><td align=center>
+		收入:1100</td> 
+		<td align=center>支出:500</td> 
+		<td align=center>總資產:1600</td>
+		<td align=center><a href="Javascript:void(0)" style="text-decoration:none;" onclick="edit(1);" >op</a></td>
+		</tr></table>
+		<div id="cy1" style="display:none">456</div>
+	</fieldset>
+	<br>
+	<!--content end-->
+	<!--post form-->
+	<form name="main_store" method="post" action="">	
+		<div style="">
+			<input type="text" name="r1" size="30" value=""/>
+			<input type="text" name="r2" size="30" value=""/>
+			<input type="text" name="r3" size="10" value=""/>
+			<input type="button" onclick="sur_btn();" value="確定新增" style="padding:2px 7px 2px 7px">
+		</div>
+	</form>
+	<!--post form end-->
+	<!--<footer></footer>-->
+</body>
+
+</html>
