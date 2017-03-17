@@ -7,7 +7,7 @@
 <script src="jquery-1.9.1.min.js"></script>
 <script type="text/javascript">
   function sur_btn () {	
-	  if (!$("input[name='cash']").val().match(/[0-9]/) && $("select[name='condition']").val()!=="") {
+	  if (!$("input[name='cash']").val().match(/[0-9]$/) && $("select[name='condition']").val()!=="") {
       alert("金額請填寫數字");
       $("input[name='cash']").focus(); 
 	    return;      
@@ -25,10 +25,14 @@
 </script>
 <style>
   .container{width:89%;margin: auto;}
+  .list{border: 1px solid #c4b0b3;}
+  .list:hover{box-shadow: 3px 3px 8px #888888;border: 1px solid #e5344c;}
   .detail{font-size:10px;text-align:right;}
+  a:hover{color:#e5344c;}
   .item{text-align:left;margin-left: 20%;word-spacing:100px;}
-  .content{float:left;height:150px;width:22%;margin-top:20px;padding-bottom:20px;font-size:12px;}	
-  .button{width:80px;height:28px;border:2px #069fd2 solid;color:#069fd2;background-color:#fff;border-radius: 2px;-webkit-transition-duration: 0.4s; /* Safari */transition-duration: 0.4s;}
+  .content{float:left;height:150px;width:22%;margin-top:20px;padding-bottom:20px;font-size:12px;border: 1px solid #c4b0b3;}	
+  .content:hover{box-shadow: 3px 3px 8px #888888;border: 1px solid #4286f4;}
+	.button{width:80px;height:28px;border:2px #069fd2 solid;color:#069fd2;background-color:#fff;border-radius: 2px;-webkit-transition-duration: 0.4s; /* Safari */transition-duration: 0.4s;}
   .button:hover{background-color:#069fd2;color:#fff;border:2px #069fd2 solid;background-color:#069fd2;}
 </style>
 </head>
@@ -39,8 +43,8 @@
 	<!--content start-->
 	<div class="container">
 		<div class="detail"><a href="Javascript:void(0)" style="text-decoration:none;" onclick="edit(0);" >展開一月明細</a></div>
-		<fieldset>
-			<legend><b>一月:</b></legend>
+		<fieldset class="list">
+			<legend>一月:</legend>
 			<div class="item">收入:3000
 			支出:500
 			餘額:2500
@@ -91,8 +95,8 @@
 		</fieldset>
 		<br>
 		<div class="detail"><a href="Javascript:void(0)" style="text-decoration:none;" onclick="edit(1);" >展開二月明細</a></div>
-		<fieldset>
-			<legend><b>二月:</b></legend>
+		<fieldset class="list">
+			<legend>二月:</legend>
 			<div class="item">收入:3000
 			支出:500
 			餘額:2500
@@ -144,8 +148,8 @@
 		</fieldset>
 		<br>
 			<div class="detail"><a href="Javascript:void(0)" style="text-decoration:none;" onclick="edit(2);" >展開三月明細</a></div>
-		<fieldset>
-			<legend><b>三月:</b></legend>
+		<fieldset class="list">
+			<legend>三月:</legend>
 			<div class="item">收入:3000
 			支出:500
 			餘額:2500
@@ -207,8 +211,8 @@
 				<option value="income">收入</option>
 				<option value="spend">支出</option>
 			</select>  
-			金額：<input type="input" name="cash" size=1 value="">
-			備註：<input type="input" name="mark" size=10 value="">
+			<input type="input" name="cash" size=1 value="">
+			#備註：<input type="input" name="mark" size=10 value="">
 			<input type="button" class="button" onclick="sur_btn();" value="確定新增" style="padding:2px 7px 2px 7px">
 		</form>
 		<!--post form end-->
