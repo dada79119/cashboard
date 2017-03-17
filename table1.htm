@@ -1,0 +1,219 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Cashboard</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="description" content="Description" />
+<script src="jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+  function sur_btn () {	
+	  if (!$("input[name='cash']").val().match(/[0-9]$/) && $("select[name='condition']").val()!=="") {
+      alert("金額請填寫數字");
+      $("input[name='cash']").focus(); 
+	    return;      
+	  }
+	  if(confirm("確定要新增?")){
+	    document.main_store.action="table.htm";
+	    document.main_store.submit();
+	  }else {
+  		return;
+  	}
+  }
+  function edit (n) {
+    $("#cy"+n).toggle(300);	
+  }
+</script>
+<style>
+  .container{width:89%;margin: auto;}
+  .list{border: 1px solid #c4b0b3;}
+  .list:hover{cursor:pointer;box-shadow: 3px 3px 8px #888888;border: 1px solid #e5344c;}
+  .detail{font-size:10px;text-align:right;}
+  .item{text-align:left;margin-left: 20%;word-spacing:100px;}
+  .content{float:left;height:150px;width:22%;margin-top:20px;padding-bottom:20px;font-size:12px;border: 1px solid #c4b0b3;}	
+  .content:hover{cursor:pointer;box-shadow: 3px 3px 8px #888888;border: 1px solid #4286f4;}
+	.button{width:80px;height:28px;border:2px #069fd2 solid;color:#069fd2;background-color:#fff;border-radius: 2px;-webkit-transition-duration: 0.4s; /* Safari */transition-duration: 0.4s;}
+  .button:hover{background-color:#069fd2;color:#fff;border:2px #069fd2 solid;background-color:#069fd2;}
+</style>
+</head>
+<body>
+	<!--<header><nav>
+	</nav></header>-->
+#以每個月薪資3000來看<br>
+	<!--content start-->
+	<div class="container">
+		<fieldset class="list" onclick="edit(0);">
+			<legend>一月:</legend>
+			<div class="item">收入:3000
+			支出:500
+			餘額:2500
+			總收入:2500</div>
+			<div id="cy0" style="display:none;padding-left:12px;">
+				<fieldset class="content">
+					<legend align="center"><b>收入</b></legend>
+					<table width=100%><tr>
+						<td>總收入</td>
+						<td>備駐</td></tr>
+						<tr><td>3000</td>
+						<td>薪資</td></tr>
+					</table>
+				</fieldset>
+				<fieldset class="content">
+					<legend align="center"><b>支出</b></legend>
+					<table width=100%><tr>
+						<td>花費</td>
+						<td>備駐</td></tr>
+						<tr><td>100</td>
+						<td>吃大餐</td></tr>
+						<tr><td>300</td>
+						<td>買文具</td></tr>
+						<tr><td>100</td>
+						<td>無</td></tr></table>
+				</fieldset>
+				<fieldset class="content">
+					<legend align="center"><b>餘額</b></legend>
+					<table width=100%><tr>
+						<td>餘額</td>
+						<td>備駐</td></tr>
+						<tr><td>3000-100 = 2900</td>
+						<td>吃大餐</td></tr>
+						<tr><td>2900-300 = 2600</td>
+						<td>買文具</td></tr>
+						<tr><td>2600-100 = 2500</td>
+						<td>無</td></tr></table>
+				</fieldset>
+				<fieldset class="content">
+					<legend align="center"><b>總收入</b></legend>
+					<table width=100%><tr>
+						<td>總收入</td>
+						<td>備駐</td></tr>
+						<tr><td>2500</td>
+						<td>當月餘額</td></tr></table>
+				</fieldset>
+			</div>
+		</fieldset>
+		<br>
+		<fieldset class="list" onclick="edit(1);">
+			<legend>二月:</legend>
+			<div class="item">收入:3000
+			支出:500
+			餘額:2500
+			總收入:5000</div>
+			<div id="cy1" style="display:none;padding-left:12px;">
+				<fieldset class="content">
+					<legend align="center"><b>收入</b></legend>
+					<table width=100%><tr>
+						<td>總收入</td>
+						<td>備駐</td></tr>
+						<tr><td>3000</td>
+						<td>薪資</td></tr></table>
+				</fieldset>
+				<fieldset class="content">
+					<legend align="center"><b>支出</b></legend>
+					<table width=100%><tr>
+						<td>花費</td>
+						<td>備駐</td></tr>
+						<tr><td>100</td>
+						<td>吃大餐</td></tr>
+						<tr><td>300</td>
+						<td>買文具</td></tr>
+						<tr><td>100</td>
+						<td>無</td></tr></table>
+				</fieldset>
+				<fieldset class="content">
+					<legend align="center"><b>餘額</b></legend>
+					<table width=100%><tr>
+						<td>餘額</td>
+						<td>備駐</td></tr>
+						<tr><td>3000-100 = 2900</td>
+						<td>吃大餐</td></tr>
+						<tr><td>2900-300 = 2600</td>
+						<td>買文具</td></tr>
+						<tr><td>2600-100 = 2500</td>
+						<td>無</td></tr></table>
+				</fieldset>
+				<fieldset class="content">
+					<legend align="center"><b>總收入</b></legend>
+					<table width=100%><tr>
+						<td>總收入</td>
+						<td>備駐</td></tr>
+						<tr><td>2500</td>
+						<td>2017/01餘額</td></tr>
+						<tr><td>2500</td>
+						<td>當月餘額</td></tr></table>
+				</fieldset>
+			</div>
+		</fieldset>
+		<br>
+		<fieldset class="list" onclick="edit(2);">
+			<legend>三月:</legend>
+			<div class="item">收入:3000
+			支出:500
+			餘額:2500
+			總收入:7500</div>
+			<div id="cy2" style="display:none;padding-left:12px;">
+				<fieldset class="content">
+					<legend align="center"><b>收入</b></legend>
+					<table width=100%>
+						<tr><td>總收入</td>
+						<td>備駐</td></tr>
+						<tr><td>3000</td>
+						<td>薪資</td></tr>
+					</table>
+				</fieldset>
+				<fieldset class="content">
+					<legend align="center"><b>支出</b></legend>
+					<table width=100%><tr>
+						<td>花費</td>
+						<td>備駐</td></tr>
+						<tr><td>100</td>
+						<td>吃大餐</td></tr>
+						<tr><td>300</td>
+						<td>買文具</td></tr>
+						<tr><td>100</td>
+						<td>無</td></tr></table>
+				</fieldset>
+				<fieldset class="content">
+					<legend align="center"><b>餘額</b></legend>
+					<table width=100%><tr>
+						<td>餘額</td>
+						<td>備駐</td></tr>
+						<tr><td>3000-100 = 2900</td>
+						<td>吃大餐</td></tr>
+						<tr><td>2900-300 = 2600</td>
+						<td>買文具</td></tr>
+						<tr><td>2600-100 = 2500</td>
+						<td>無</td></tr>
+					</table>
+				</fieldset>
+				<fieldset class="content">
+					<legend align="center"><b>總收入</b></legend>
+					<table width=100%><tr>
+						<td>總收入</td>
+						<td>備駐</td></tr>
+						<tr><td>2500</td>
+						<td>2017/01餘額</td></tr>
+						<tr><td>2500</td>
+						<td>2017/02餘額</td></tr>
+						<tr><td>2500</td>
+						<td>當月餘額</td></tr></table>
+				</fieldset>
+			</div>
+		</fieldset>
+		<!--content end-->
+		<!--post form-->
+		<br>
+		<form name="main_store" method="post" action="">	
+			<select name="condition">
+				<option value="income">收入</option>
+				<option value="spend">支出</option>
+			</select>  
+			<input type="input" name="cash" size=1 value="">
+			#備註：<input type="input" name="mark" size=10 value="">
+			<input type="button" class="button" onclick="sur_btn();" value="確定新增" style="padding:2px 7px 2px 7px">
+		</form>
+		<!--post form end-->
+		<!--<footer></footer>-->
+	</div>
+</body>
+
+</html>
