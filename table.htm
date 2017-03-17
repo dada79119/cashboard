@@ -1,7 +1,13 @@
+<?php
+  include "config_adm.php";
+  include_once "cls_pool.php";
+  include_once "store_fun.php";
+print_r($_POST);
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>cashboard</title>
+	<title>Page Title</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="description" content="Description" />
 	
@@ -15,6 +21,15 @@
 		 $("#cy"+n).toggle(300);	
 		}
 	</script>
+	<style>
+	.content{
+	  float:left;
+	  height:100px;
+	  width:25%;
+	  padding-bottom:20px;
+	 
+	}	
+	</style>
 	</head>
 <body>
 	<!--<header><nav>
@@ -30,7 +45,18 @@
 		<td align=center><a href="Javascript:void(0)" style="text-decoration:none;" onclick="edit(0);" >op</a>
 		</td></tr>
 		</table>
-		<div id="cy0" style="display:none">123</div>
+		<div id="cy0" style="display:none;padding-left:11.7%">
+			<fieldset class="content">
+				<legend align="center"><b>收入</b></legend>
+				<label>100</label>
+			</fieldset>
+			<fieldset class="content">
+				<legend align="center"><b>支出</b></legend>
+			</fieldset>
+			<fieldset class="content">
+				<legend align="center"><b>總資產</b></legend>
+			</fieldset>
+		</div>
 	</fieldset>
 	<br>
 	<fieldset>
@@ -38,14 +64,50 @@
 		<table width=100%><tr><td align=center>
 		收入:1100</td> 
 		<td align=center>支出:500</td> 
-		<td align=center>總資產:1600</td>
+		<td align=center>總資產:600</td>
 		<td align=center><a href="Javascript:void(0)" style="text-decoration:none;" onclick="edit(1);" >op</a></td>
 		</tr></table>
-		<div id="cy1" style="display:none">456</div>
+		<div id="cy1" style="display:none;padding-left:11.7%">
+			<fieldset class="content">
+				<legend align="center"><b>收入</b></legend>
+				<table width=100%>
+						<tr><td>收入</td>
+						<td>備駐</td></tr>
+						<tr><td>1100</td>
+						<td>新資</td></tr>
+				</table>
+			</fieldset>
+			<fieldset class="content">
+				<legend align="center"><b>支出</b></legend>
+				<table width=100%>
+					<tr><td>花費</td>
+					<td>備駐</td></tr>
+					<tr><td>100</td>
+					<td>吃大餐</td></tr>
+					<tr><td>300</td>
+					<td>買文具</td></tr>
+					<tr><td>100</td>
+					<td>無</td></tr>
+				</table>
+			</fieldset>
+			<fieldset class="content">
+				<legend align="center"><b>總資產</b></legend>
+					<table width=100%>
+					<tr><td>總資產</td>
+					<td>備駐</td></tr>
+					<tr><td>1100-100 = 1000</td>
+					<td>吃大餐</td></tr>
+					<tr><td>1000-300 = 700</td>
+						<td>買文具</td></tr>
+					<tr><td>700-100 = 600</td>
+						<td>無</td></tr>
+				</table>
+			</fieldset>
+		</div>
 	</fieldset>
-	<br>
 	<!--content end-->
 	<!--post form-->
+	<br>
 	<form name="main_store" method="post" action="">	
 		<div style="">
 			<input type="text" name="r1" size="30" value=""/>
