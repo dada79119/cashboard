@@ -7,7 +7,7 @@
 <script src="jquery-1.9.1.min.js"></script>
 <script type="text/javascript">
   function sur_btn () {	
-	  if (!$("input[name='cash']").val().match(/^[0-9]*$/) && $("select[name='condition']").val()!=="") {
+	  if (!$("input[name='cash']").val().match(/[0-9]/) && $("select[name='condition']").val()!=="") {
       alert("金額請填寫數字");
       $("input[name='cash']").focus(); 
 	    return;      
