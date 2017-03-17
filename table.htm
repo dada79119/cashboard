@@ -1,90 +1,58 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>Cashboard</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<meta name="description" content="Description" />
-	<script src="jquery-1.9.1.min.js"></script>
-	<script type="text/javascript">
-		function sur_btn () {	
-			if (!$("input[name='cash']").val().match(/[0-9]/) && $("select[name='condition']").val()!=="") {
-	      	alert("金額請填寫數字");
-	      	$("input[name='cash']").focus(); 
-			  	return;      
-	  	}
-	    document.main_store.action="table.htm";
-	    document.main_store.submit();
-		}
-		function edit (n) {
-		 $("#cy"+n).toggle(300);	
-		}
-	</script>
-	<style>
-	.container{
-		width:89%;
-		margin: auto;
-	}
-	.detail{
-		font-size:10px;
-		text-align:right;	
-	}
-	.item{
-	  text-align:left;
-	  margin-left: 20%;
-	  word-spacing:100px;	
-	}
-	.content{
-	  float:left;
-	  height:150px;
-	  width:22%;
-	  margin-top:20px;
-	  padding-bottom:20px;
-	  font-size:12px;
-	 
-	}	
-	.button{
-		width:80px;
-		height:28px;
-		border:2px #069fd2 solid;
-		color:#069fd2;
-		background-color:#fff;
-		border-radius: 2px;
-		-webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-	}
-	.button:hover{
-		background-color:#069fd2;
-		color:#fff;
-		border:2px #069fd2 solid;
-		background-color:#069fd2;
-	}
-	</style>
-	</head>
+<title>Cashboard</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="description" content="Description" />
+<script src="jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+  function sur_btn () {	
+    if (!$("input[name='cash']").val().match(/[0-9]/) && $("select[name='condition']").val()!=="") {
+	alert("金額請填寫數字");
+	$("input[name='cash']").focus(); 
+	return;      
+    }
+    document.main_store.action="table.htm";
+    document.main_store.submit();
+  }
+  function edit (n) {
+    $("#cy"+n).toggle(300);	
+  }
+</script>
+<style>
+  .container{width:89%;margin: auto;}
+  .detail{font-size:10px;text-align:right;}
+  .item{text-align:left;margin-left: 20%;word-spacing:100px;}
+  .content{float:left;height:150px;width:22%;margin-top:20px;padding-bottom:20px;font-size:12px;}	
+  .button{width:80px;height:28px;border:2px #069fd2 solid;color:#069fd2;background-color:#fff;border-radius: 2px;-webkit-transition-duration: 0.4s; /* Safari */transition-duration: 0.4s;}
+  .button:hover{background-color:#069fd2;color:#fff;border:2px #069fd2 solid;background-color:#069fd2;}
+</style>
+</head>
 <body>
-	<!--<header><nav>
-	</nav></header>-->
+<!--<header><nav>
+</nav></header>-->
 #以每個月薪資3000來看<br>
-	<!--content start-->
-	<div class="container">
-		<div class="detail"><a href="Javascript:void(0)" style="text-decoration:none;" onclick="edit(0);" >展開一月明細</a></div>
-		<fieldset>
-			<legend><b>一月:</b></legend>
-			<div class="item">收入:3000
-			支出:500
-			餘額:2500
-			總收入:2500</div>
-			<div id="cy0" style="display:none;padding-left:12px;">
-				<fieldset class="content">
-					<legend align="center"><b>收入</b></legend>
-					<table width=100%>
-							<tr><td>總收入</td>
-							<td>備駐</td></tr>
-							<tr><td>3000</td>
-							<td>薪資</td></tr>
-					</table>
-				</fieldset>
-				<fieldset class="content">
-					<legend align="center"><b>支出</b></legend>
+<!--content start-->
+<div class="container">
+<div class="detail"><a href="Javascript:void(0)" style="text-decoration:none;" onclick="edit(0);" >展開一月明細</a></div>
+<fieldset>
+	<legend><b>一月:</b></legend>
+	<div class="item">收入:3000
+	支出:500
+	餘額:2500
+	總收入:2500</div>
+	<div id="cy0" style="display:none;padding-left:12px;">
+		<fieldset class="content">
+			<legend align="center"><b>收入</b></legend>
+			<table width=100%>
+					<tr><td>總收入</td>
+					<td>備駐</td></tr>
+					<tr><td>3000</td>
+					<td>薪資</td></tr>
+			</table>
+		</fieldset>
+		<fieldset class="content">
+			<legend align="center"><b>支出</b></legend>
 					<table width=100%>
 						<tr><td>花費</td>
 						<td>備駐</td></tr>
@@ -251,5 +219,4 @@
 		<!--<footer></footer>-->
 	</div>
 </body>
-
 </html>
